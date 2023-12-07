@@ -8,6 +8,7 @@ export const Contact = ({value}) => {
     dispatch(deleteContact(value.id));
   };
   return(
+    <div className={css.wrapper}>
   <li className={css.item}>
     {value.name}:{value.number}
     <button
@@ -18,6 +19,7 @@ export const Contact = ({value}) => {
       Delete
     </button>
   </li>
+  </div>
 );}
 
 

@@ -17,43 +17,36 @@ export const ContactForm = () => {
     if (existingContact) {
       // alert(`Contact with name '${name}' already exists!`);
 
-      const notify = (name) => toast.error(`Contact with name '${name}' already exists!`);
-      notify(name)
+      const notify = name =>
+        toast.error(`Contact with name '${name}' already exists!`);
+      notify(name);
       event.target.reset();
-      return; 
+      return;
     }
 
-    dispatch(addContact({name, number}))
+    dispatch(addContact({ name, number }));
     event.target.reset();
   };
 
-  
-    return (
-      <form className={css.form} onSubmit={handleSubmit}>
-        <label className={css.label} htmlFor="name">
-          Name
-        </label>
-        <input
-          className={css.input}
-          type="text"
-          name="name"
-          id="name"
-          required
-        />
-        <label className={css.label} htmlFor="number">
-          Number
-        </label>
-        <input
-          className={css.input}
-          type="tel"
-          name="number"
-          id="number"
-          required
-        />
-        <button className={css.button} type="submit">
-          Add contact
-        </button>
-      </form>
-    );
-  }
-
+  return (
+    <form className={css.form} onSubmit={handleSubmit}>
+      <label className={css.label} htmlFor="name">
+        Name
+      </label>
+      <input className={css.input} type="text" name="name" id="name" required />
+      <label className={css.label} htmlFor="number">
+        Number
+      </label>
+      <input
+        className={css.input}
+        type="tel"
+        name="number"
+        id="number"
+        required
+      />
+      <button className={css.button} type="submit">
+        Add contact
+      </button>
+    </form>
+  );
+};

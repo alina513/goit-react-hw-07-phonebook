@@ -2,7 +2,7 @@
     font-size: 30px;
     display: flex;
     margin-bottom: 20px;
-
+    justify-content: flex-end;
     
 }
 
@@ -13,4 +13,9 @@
     display: block;
     border: solid 1px black;
     border-radius: 50px;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
 }
